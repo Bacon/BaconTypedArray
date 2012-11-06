@@ -3,5 +3,5 @@
 return array(
     'BaconTypedArray\Int32Array'         => __DIR__ . '/src/BaconTypedArray/Int32Array.php',
     'BaconTypedArray\AbstractTypedArray' => __DIR__ . '/src/BaconTypedArray/AbstractTypedArray.php',
-    'BaconQrCode\Module'                 => __DIR__ . '/Module.php',
+    'BaconTypedArray\Module'             => __DIR__ . '/Module.php',
 );
