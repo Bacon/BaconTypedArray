@@ -1,4 +1,12 @@
 <?php
+/**
+ * BaconTypedArray
+ *
+ * @link      http://github.com/Bacon/BaconTypedArray For the canonical source repository
+ * @copyright 2012 Ben 'DASPRiD' Scholzen
+ * @license   http://opensource.org/licenses/BSD-2-Clause Simplified BSD License
+ */
+
 namespace BaconTypedArray;
 
 use ArrayAccess;
@@ -39,6 +47,41 @@ abstract class AbstractTypedArray implements
                 $this[$i++] = $value;
             }
         }
+    }
+
+    /**
+     * Create a new typed array from binary representation.
+     *
+     * @param  string $string
+     * @return AbstractTypedArray
+     */
+    public static function fromString($string)
+    {
+        $array = new static();
+        $array->buffer = $string;
+
+        return $array;
+    }
+
+    /**
+     * Get binary representation.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return $this->buffer;
+    }
+
+    /**
+     * Proxy method to toString().
+     *
+     * @see    AbstractTypedArray::toString()
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
     }
 
     /**
