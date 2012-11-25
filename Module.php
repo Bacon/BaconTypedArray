@@ -9,16 +9,17 @@
 
 namespace BaconTypedArray;
 
-use Zend\Module\Consumer\AutoloaderProvider;
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 
 /**
  * Module providing typed arrays.
  */
-class Module implements AutoloaderProvider
+class Module implements AutoloaderProviderInterface
 {
     /**
-     * Get autoloader config.
+     * getAutoloaderConfig(): defined by AutoloaderProviderInterface.
      *
+     * @see    AutoloaderProviderInterface::getAutoloaderConfig()
      * @return array
      */
     public function getAutoloaderConfig()
